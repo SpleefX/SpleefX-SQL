@@ -68,10 +68,14 @@
     </build>
 
     <repositories>
+
+        <!-- PaperMC repository -->
         <repository>
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
+
+        <!-- Sonatype repository-->
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
@@ -79,12 +83,16 @@
     </repositories>
 
     <dependencies>
+
+        <!-- Paper 1.14.4 -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.14.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- SpleefX plugin -->
         <dependency>
             <groupId>io.github.spleefx</groupId>
             <artifactId>SpleefX</artifactId>
@@ -93,7 +101,6 @@
         </dependency>
 
         <!-- JDBC SQLite Drivers -->
-
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>

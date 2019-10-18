@@ -21,7 +21,6 @@ import io.github.spleefx.data.DataException;
 import io.github.spleefx.data.DataProvider;
 import io.github.spleefx.data.GameStats;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
