@@ -1,0 +1,6 @@
+name: SpleefXSQL
+version: ${project.version}
+main: io.github.spleefx.SpleefXSQL
+depend: [SpleefX]
+authors: [Reflxction]
+description: A SQL extension for SpleefX
