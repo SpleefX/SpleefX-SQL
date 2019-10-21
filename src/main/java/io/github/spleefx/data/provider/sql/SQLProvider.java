@@ -124,6 +124,17 @@ public class SQLProvider implements DataProvider {
     }
 
     /**
+     * Returns the statistics of the specified player
+     *
+     * @param player Player to retrieve from
+     * @return The player's statistics
+     */
+    @Override
+    public GameStats getStatistics(OfflinePlayer player) {
+        return Query.get(player);
+    }
+
+    /**
      * Connects to the database and sets the {@link Connection} instance
      */
     private void connect() throws Exception {
