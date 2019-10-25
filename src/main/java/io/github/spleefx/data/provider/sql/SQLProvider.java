@@ -52,7 +52,7 @@ public class SQLProvider implements DataProvider {
      */
     @Override
     public void createRequiredFiles(FileManager<SpleefX> fileManager) {
-        File file = new File(SpleefX.getPlugin().getDataFolder(), PluginSettings.STATISTICS_DIRECTORY.get() + File.separator + PluginSettings.SQLITE_FILE_NAME.get());
+        File file = new File(fileManager.getPlugin().getDataFolder(), PluginSettings.STATISTICS_DIRECTORY.get() + File.separator + PluginSettings.SQLITE_FILE_NAME.get());
         try {
             if (!file.exists()) { // Create the table
                 file.createNewFile();
