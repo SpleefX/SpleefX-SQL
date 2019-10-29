@@ -22,8 +22,8 @@ import io.github.spleefx.data.DataProvider;
 import io.github.spleefx.data.GameStats;
 import io.github.spleefx.data.PlayerStatistic;
 import io.github.spleefx.extension.ExtensionMode;
-import io.github.spleefx.util.FileManager;
-import io.github.spleefx.util.PluginSettings;
+import io.github.spleefx.util.io.FileManager;
+import io.github.spleefx.util.plugin.PluginSettings;
 import org.bukkit.OfflinePlayer;
 
 import java.io.File;
