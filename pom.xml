@@ -75,7 +75,6 @@
 
     </dependencies>
 
-
     <build>
         <defaultGoal>clean package</defaultGoal>
         <plugins>
