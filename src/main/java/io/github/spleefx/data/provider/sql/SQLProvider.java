@@ -21,7 +21,7 @@ import io.github.spleefx.SpleefX;
 import io.github.spleefx.data.DataProvider;
 import io.github.spleefx.data.GameStats;
 import io.github.spleefx.data.PlayerStatistic;
-import io.github.spleefx.extension.ExtensionMode;
+import io.github.spleefx.extension.GameExtension;
 import io.github.spleefx.util.io.FileManager;
 import io.github.spleefx.util.plugin.PluginSettings;
 import org.bukkit.OfflinePlayer;
@@ -96,7 +96,7 @@ public class SQLProvider implements DataProvider {
      * @return The statistic
      */
     @Override
-    public int get(PlayerStatistic statistic, OfflinePlayer player, ExtensionMode extension) {
+    public int get(PlayerStatistic statistic, OfflinePlayer player, GameExtension extension) {
         return Query.get(player).get(statistic, extension);
     }
 
@@ -109,7 +109,7 @@ public class SQLProvider implements DataProvider {
      * @param addition  Value to add
      */
     @Override
-    public void add(PlayerStatistic statistic, OfflinePlayer player, ExtensionMode extension, int addition) {
+    public void add(PlayerStatistic statistic, OfflinePlayer player, GameExtension extension, int addition) {
         Query.get(player).add(statistic, extension, addition);
     }
 
