@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.spleefx.data.provider.sql;
+package io.github.spleefx.data.provider.sqlite;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -34,12 +34,12 @@ import java.util.function.Supplier;
 /**
  * Data provider for SQL
  */
-public class SQLProvider implements DataProvider {
+public class SQLiteProvider implements DataProvider {
 
     /**
      * A quick accessor for the connection
      */
-    protected static final Supplier<Connection> SQL = () -> ((SQLProvider) SpleefX.getPlugin().getDataProvider()).connection;
+    protected static final Supplier<Connection> SQL = () -> ((SQLiteProvider) SpleefX.getPlugin().getDataProvider()).connection;
 
     /**
      * The SQL connection
@@ -58,7 +58,7 @@ public class SQLProvider implements DataProvider {
             if (!file.exists()) { // Create the table
                 file.createNewFile();
                 connect();
-                Query.createTable();
+                SQLiteQuery.createTable();
                 return;
             }
             connect(); // The database already exists, so just connect
@@ -85,7 +85,7 @@ public class SQLProvider implements DataProvider {
      */
     @Override
     public void add(OfflinePlayer player) {
-        Query.add(player, new GameStats());
+        SQLiteQuery.add(player, new GameStats());
     }
 
     /**
@@ -98,7 +98,7 @@ public class SQLProvider implements DataProvider {
      */
     @Override
     public int get(PlayerStatistic statistic, OfflinePlayer player, GameExtension extension) {
-        return Query.get(player).get(statistic, extension);
+        return SQLiteQuery.get(player).get(statistic, extension);
     }
 
     /**
@@ -111,7 +111,7 @@ public class SQLProvider implements DataProvider {
      */
     @Override
     public void add(PlayerStatistic statistic, OfflinePlayer player, GameExtension extension, int addition) {
-        Query.get(player).add(statistic, extension, addition);
+        SQLiteQuery.get(player).add(statistic, extension, addition);
     }
 
     /**
@@ -121,7 +121,7 @@ public class SQLProvider implements DataProvider {
      */
     @Override
     public void saveEntries(SpleefX plugin) {
-        Query.addAll();
+        SQLiteQuery.addAll();
     }
 
     /**
@@ -133,7 +133,7 @@ public class SQLProvider implements DataProvider {
      */
     @Override
     public void setStatistics(OfflinePlayer player, GameStats stats) {
-        Query.add(player, stats);
+        SQLiteQuery.add(player, stats);
     }
 
     /**
@@ -157,7 +157,7 @@ public class SQLProvider implements DataProvider {
      */
     @Override
     public GameStats getStatistics(OfflinePlayer player) {
-        return Query.get(player);
+        return SQLiteQuery.get(player);
     }
 
     /**
