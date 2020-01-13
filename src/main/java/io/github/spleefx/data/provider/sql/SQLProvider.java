@@ -22,6 +22,7 @@ import io.github.spleefx.data.DataProvider;
 import io.github.spleefx.data.GameStats;
 import io.github.spleefx.data.PlayerStatistic;
 import io.github.spleefx.extension.GameExtension;
+import io.github.spleefx.shop.booster.BoosterInstance;
 import io.github.spleefx.util.io.FileManager;
 import io.github.spleefx.util.plugin.PluginSettings;
 import org.bukkit.OfflinePlayer;
@@ -121,6 +122,31 @@ public class SQLProvider implements DataProvider {
     @Override
     public void saveEntries(SpleefX plugin) {
         Query.addAll();
+    }
+
+    /**
+     * Sets the player statistics entirely. Useful for converting between different {@link DataProvider}
+     * implementations.
+     *
+     * @param player Player to convert
+     * @param stats  Stats to override with
+     */
+    @Override
+    public void setStatistics(OfflinePlayer player, GameStats stats) {
+        Query.add(player, stats);
+    }
+
+    /**
+     * Adds the specified booster to the player
+     * <p>
+     * Note: This method <i>MUST</i> be overriden if the data provider does not cache!
+     *
+     * @param player  Player to give
+     * @param booster Booster to add.
+     */
+    @Override
+    public void addBooster(OfflinePlayer player, BoosterInstance booster) {
+        DataProvider.super.addBooster(player, booster);
     }
 
     /**

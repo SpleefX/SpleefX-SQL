@@ -6,7 +6,7 @@
 
     <groupId>io.github.spleefx</groupId>
     <artifactId>SpleefXSQL</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>SpleefXSQL</name>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>io.github.spleefx</groupId>
             <artifactId>SpleefX</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>2.5-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
